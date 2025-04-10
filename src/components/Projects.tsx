@@ -1,7 +1,13 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import VideoCard from './VideoCard';
 import ImageCard from './ImageCard';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { Filter, Grid3X3, Film, RefreshCcw } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { useToast } from "@/hooks/use-toast";
 
 const Projects = () => {
   // These would be replaced with actual URLs from Supabase storage
@@ -14,7 +20,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Virtual',
+      title: 'Virtual Site Walkthrough',
       thumbnailUrl: 'https://via.placeholder.com/640x360/144272/FFFFFF?text=Virtual+Site+Walkthrough',
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
     },
@@ -72,38 +78,83 @@ const Projects = () => {
     }
   ];
 
+  const [isGridView, setIsGridView] = useState(true);
+  const { toast } = useToast();
+
+  const handleViewToggle = () => {
+    setIsGridView(!isGridView);
+    toast({
+      title: `Switched to ${isGridView ? 'List' : 'Grid'} view`,
+      duration: 2000
+    });
+  };
+
   return (
-    <section className="py-12 bg-portfolio-softGray">
+    <section className="py-16 bg-portfolio-softGray">
       <div className="portfolio-container">
-        <h2 className="section-title">Projects</h2>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+          <h2 className="section-title">Projects</h2>
+          <Button variant="outline" className="mt-4 md:mt-0" onClick={handleViewToggle}>
+            {isGridView ? <Film className="mr-2" /> : <Grid3X3 className="mr-2" />}
+            {isGridView ? "List View" : "Grid View"}
+          </Button>
+        </div>
         
-        <h3 className="text-xl font-semibold mb-6 text-portfolio-lightNavy">Video Campaigns</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {videos.map(video => (
-            <VideoCard 
-              key={video.id}
-              title={video.title}
-              thumbnailUrl={video.thumbnailUrl}
-              videoUrl={video.videoUrl}
-            />
-          ))}
-        </div>
+        <Tabs defaultValue="videos" className="w-full">
+          <TabsList className="w-full mb-8 grid grid-cols-2 h-auto">
+            <TabsTrigger value="videos" className="py-3">
+              <Film className="mr-2 h-4 w-4" /> Video Campaigns
+            </TabsTrigger>
+            <TabsTrigger value="images" className="py-3">
+              <Filter className="mr-2 h-4 w-4" /> Creative Designs
+            </TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="videos" className="space-y-4">
+            <div className={`grid ${isGridView ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'} gap-6`}>
+              {videos.map(video => (
+                <VideoCard 
+                  key={video.id}
+                  title={video.title}
+                  thumbnailUrl={video.thumbnailUrl}
+                  videoUrl={video.videoUrl}
+                  isCompact={!isGridView}
+                />
+              ))}
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="images" className="space-y-4">
+            <div className={`grid ${isGridView ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3' : 'grid-cols-1 md:grid-cols-2'} gap-6`}>
+              {images.map(image => (
+                <Card key={image.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <CardContent className="p-0">
+                    <div className="relative group">
+                      <AspectRatio ratio={isGridView ? 1 : 21/9} className="bg-muted">
+                        <img 
+                          src={image.imageUrl} 
+                          alt={image.title} 
+                          className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </AspectRatio>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div className="p-4 w-full">
+                          <h3 className="text-white font-semibold text-lg">{image.title}</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
 
-        <h3 className="text-xl font-semibold mb-6 text-portfolio-lightNavy">Creative Designs</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {images.map(image => (
-            <ImageCard 
-              key={image.id}
-              title={image.title}
-              imageUrl={image.imageUrl}
-            />
-          ))}
-        </div>
-
-        <div className="mt-8 text-center">
-          <p className="italic text-gray-600">
-            Note: Replace placeholder images and videos with actual content from your Supabase storage.
-          </p>
+        <div className="mt-12 text-center">
+          <Button variant="outline" size="lg" className="group">
+            <RefreshCcw className="mr-2 h-4 w-4 group-hover:animate-spin" />
+            Load More Projects
+          </Button>
         </div>
       </div>
     </section>

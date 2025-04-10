@@ -1,57 +1,55 @@
 
 import React, { useState } from 'react';
-import { Play, X } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Play } from "lucide-react";
 
 interface VideoCardProps {
   title: string;
   thumbnailUrl: string;
   videoUrl: string;
+  isCompact?: boolean;
 }
 
-const VideoCard = ({ title, thumbnailUrl, videoUrl }: VideoCardProps) => {
+const VideoCard = ({ title, thumbnailUrl, videoUrl, isCompact = false }: VideoCardProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const togglePlay = () => {
-    setIsPlaying(!isPlaying);
+  const handlePlayClick = () => {
+    setIsPlaying(true);
   };
 
   return (
-    <div className="card h-full">
-      <div className="relative">
+    <Card className={`overflow-hidden ${isCompact ? 'flex flex-row' : ''} hover:shadow-xl transition-shadow duration-300`}>
+      <div className={`relative ${isCompact ? 'w-1/3' : 'w-full'}`}>
         {!isPlaying ? (
-          <>
+          <div className="relative group cursor-pointer" onClick={handlePlayClick}>
             <img 
               src={thumbnailUrl} 
               alt={title} 
-              className="w-full h-48 object-cover rounded-md"
+              className="w-full h-auto object-cover aspect-video"
             />
-            <button 
-              onClick={togglePlay} 
-              className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 rounded-md"
-            >
-              <Play size={48} className="text-white opacity-80" />
-            </button>
-          </>
+            <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+              <Button size="icon" variant="ghost" className="rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 h-12 w-12">
+                <Play className="h-6 w-6 text-white fill-white" />
+              </Button>
+            </div>
+          </div>
         ) : (
-          <div className="relative w-full h-48">
+          <div className="aspect-video w-full h-full">
             <iframe 
-              src={`${videoUrl}?autoplay=1`} 
+              src={videoUrl} 
               title={title}
-              className="w-full h-full rounded-md"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+              className="w-full h-full"
+              frameBorder="0" 
+              allowFullScreen 
             ></iframe>
-            <button 
-              onClick={togglePlay}
-              className="absolute top-2 right-2 bg-black bg-opacity-50 rounded-full p-1"
-            >
-              <X size={20} className="text-white" />
-            </button>
           </div>
         )}
       </div>
-      <h3 className="text-lg font-medium mt-3">{title}</h3>
-    </div>
+      <CardContent className={`${isCompact ? 'w-2/3 flex items-center' : 'pt-4'}`}>
+        <h3 className="font-semibold text-lg text-portfolio-navy">{title}</h3>
+      </CardContent>
+    </Card>
   );
 };
 
