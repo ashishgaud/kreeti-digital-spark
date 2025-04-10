@@ -33,13 +33,8 @@ const Projects = () => {
       title: 'SKYLINE',
       thumbnailUrl: 'https://via.placeholder.com/640x360/0A2647/FFFFFF?text=Client+Testimonials',
       videoUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Video%202025-04-11%20at%201.35.32%20AM.mp4'
-    },
-    {
-      id: 5,
-      title: 'Property Teaser Video',
-      thumbnailUrl: 'https://via.placeholder.com/640x360/144272/FFFFFF?text=Property+Teaser',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
     }
+  
   ];
   
   // Sample images data
