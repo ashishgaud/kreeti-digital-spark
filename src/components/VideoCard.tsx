@@ -42,7 +42,7 @@ const VideoCard = ({ title, thumbnailUrl, videoUrl, isCompact = false }: VideoCa
                 title={title}
                 className="w-full h-full"
                 frameBorder="0" 
-                allowFullScreen 
+                allowFullScreen
               ></iframe>
             ) : (
               <video 
@@ -51,6 +51,8 @@ const VideoCard = ({ title, thumbnailUrl, videoUrl, isCompact = false }: VideoCa
                 className="w-full h-full"
                 controls
                 autoPlay
+                controlsList="nodownload"
+                onContextMenu={(e) => e.preventDefault()}
               ></video>
             )}
           </div>
