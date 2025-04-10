@@ -14,7 +14,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Virtual Site Walkthrough',
+      title: 'Virtual',
       thumbnailUrl: 'https://via.placeholder.com/640x360/144272/FFFFFF?text=Virtual+Site+Walkthrough',
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
     },
