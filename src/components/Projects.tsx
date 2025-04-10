@@ -20,7 +20,7 @@ const Projects = () => {
       id: 2,
       title: '1BHK & 2BHK Launch Campaign',
       thumbnailUrl: 'https://via.placeholder.com/640x360/144272/FFFFFF?text=Virtual+Site+Walkthrough',
-      videoUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Video%202025-04-11%20at%201.35.09%20AM.mp4'
+      videoUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Video%202025-04-11%20at%201.35.30%20AM.mp4'
     },
     {
       id: 3,
