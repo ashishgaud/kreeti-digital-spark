@@ -13,7 +13,7 @@ const Projects = () => {
     {
       id: 1,
       title: '1BHK Launch Campaign',
-       thumbnailUrl: 'https://via.placeholder.com/640x360/0A2647/FFFFFF?text=Digital+Marketing+Portfolio+%7C+Click+to+Play'
+       thumbnailUrl: 'https://via.placeholder.com/640x360/0A2647/FFFFFF?text=Digital+Marketing+Portfolio+%7C+Click+to+Play',
 
       videoUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Video%202025-04-11%20at%201.35.09%20AM.mp4'
     },
