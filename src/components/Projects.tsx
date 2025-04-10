@@ -24,7 +24,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: 'Diwali Promo Ad',
+      title: '1BHK & 2BHK& Jodi Option Launch Campaign',
       thumbnailUrl: 'https://via.placeholder.com/640x360/2C74B3/FFFFFF?text=Diwali+Promo+Ad',
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
     },
