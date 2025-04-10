@@ -36,13 +36,23 @@ const VideoCard = ({ title, thumbnailUrl, videoUrl, isCompact = false }: VideoCa
           </div>
         ) : (
           <div className="aspect-video w-full h-full">
-            <iframe 
-              src={videoUrl} 
-              title={title}
-              className="w-full h-full"
-              frameBorder="0" 
-              allowFullScreen 
-            ></iframe>
+            {videoUrl.includes('youtube.com') ? (
+              <iframe 
+                src={videoUrl} 
+                title={title}
+                className="w-full h-full"
+                frameBorder="0" 
+                allowFullScreen 
+              ></iframe>
+            ) : (
+              <video 
+                src={videoUrl} 
+                title={title}
+                className="w-full h-full"
+                controls
+                autoPlay
+              ></video>
+            )}
           </div>
         )}
       </div>
