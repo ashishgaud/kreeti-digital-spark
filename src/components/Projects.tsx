@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
 import VideoCard from './VideoCard';
+import ImageCard from './ImageCard';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Grid3X3, Film, RefreshCcw } from "lucide-react";
+import { Grid3X3, Film, Image, RefreshCcw } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Projects = () => {
@@ -40,8 +41,43 @@ const Projects = () => {
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
     }
   ];
+  
+  // Sample images data
+  const images = [
+    {
+      id: 1,
+      title: 'Property Exterior Shot',
+      imageUrl: 'https://via.placeholder.com/800x600/0A2647/FFFFFF?text=Property+Exterior'
+    },
+    {
+      id: 2,
+      title: 'Modern Interior Design',
+      imageUrl: 'https://via.placeholder.com/800x600/144272/FFFFFF?text=Interior+Design'
+    },
+    {
+      id: 3,
+      title: 'Promotional Poster',
+      imageUrl: 'https://via.placeholder.com/800x600/2C74B3/FFFFFF?text=Promo+Poster'
+    },
+    {
+      id: 4,
+      title: 'Social Media Campaign',
+      imageUrl: 'https://via.placeholder.com/800x600/0A2647/FFFFFF?text=Social+Media'
+    },
+    {
+      id: 5,
+      title: 'Brand Style Guide',
+      imageUrl: 'https://via.placeholder.com/800x600/144272/FFFFFF?text=Brand+Guide'
+    },
+    {
+      id: 6,
+      title: 'Event Photography',
+      imageUrl: 'https://via.placeholder.com/800x600/2C74B3/FFFFFF?text=Event+Photos'
+    }
+  ];
 
   const [isGridView, setIsGridView] = useState(true);
+  const [activeTab, setActiveTab] = useState("videos");
   const { toast } = useToast();
 
   const handleViewToggle = () => {
@@ -63,10 +99,13 @@ const Projects = () => {
           </Button>
         </div>
         
-        <Tabs defaultValue="videos" className="w-full">
-          <TabsList className="w-full mb-8 grid grid-cols-1 h-auto">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <TabsList className="w-full mb-8 grid grid-cols-2 h-auto">
             <TabsTrigger value="videos" className="py-3">
               <Film className="mr-2 h-4 w-4" /> Video Campaigns
+            </TabsTrigger>
+            <TabsTrigger value="images" className="py-3">
+              <Image className="mr-2 h-4 w-4" /> Image Gallery
             </TabsTrigger>
           </TabsList>
           
@@ -79,6 +118,18 @@ const Projects = () => {
                   thumbnailUrl={video.thumbnailUrl}
                   videoUrl={video.videoUrl}
                   isCompact={!isGridView}
+                />
+              ))}
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="images" className="space-y-4">
+            <div className={`grid ${isGridView ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'} gap-6`}>
+              {images.map(image => (
+                <ImageCard
+                  key={image.id}
+                  title={image.title}
+                  imageUrl={image.imageUrl}
                 />
               ))}
             </div>
