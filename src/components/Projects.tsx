@@ -12,7 +12,7 @@ const Projects = () => {
   const videos = [
     {
       id: 1,
-      title: '3BHK Launch Campaign',
+      title: '1BHK Launch Campaign',
       thumbnailUrl: 'https://via.placeholder.com/640x360/0A2647/FFFFFF?text=3BHK+Launch+Campaign',
       videoUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Video%202025-04-11%20at%201.35.09%20AM.mp4'
     },
