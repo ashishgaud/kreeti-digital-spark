@@ -47,12 +47,12 @@ const Projects = () => {
     {
       id: 1,
       title: 'Property Exterior Shot',
-      imageUrl: 'https://via.placeholder.com/800x600/0A2647/FFFFFF?text=Property+Exterior'
+      imageUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Image%202025-04-11%20at%201.35.31%20AM.jpeg'
     },
     {
       id: 2,
       title: 'Modern Interior Design',
-      imageUrl: 'https://via.placeholder.com/800x600/144272/FFFFFF?text=Interior+Design'
+      imageUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Image%202025-04-11%20at%201.35.32%20AM.jpeg'
     },
     {
       id: 3,
