@@ -84,7 +84,7 @@ const Projects = () => {
       id: 2,
       platform: 'Instagram',
       handle: 'premium_project_bhayandar_',
-      url: '#',
+      url: 'https://www.instagram.com/premium_project_bhayandar_/?hl=en',
       icon: <Instagram className="h-5 w-5" />
     }
   ];
