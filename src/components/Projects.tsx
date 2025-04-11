@@ -4,8 +4,9 @@ import VideoCard from './VideoCard';
 import ImageCard from './ImageCard';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Grid3X3, Film, Image, RefreshCcw } from "lucide-react";
+import { Grid3X3, Film, Image, RefreshCcw, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Projects = () => {
   // These would be replaced with actual URLs from Supabase storage
@@ -34,7 +35,6 @@ const Projects = () => {
       thumbnailUrl: 'https://via.placeholder.com/640x360/0A2647/FFFFFF?text=Client+Testimonials',
       videoUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Video%202025-04-11%20at%201.35.32%20AM.mp4'
     }
-  
   ];
   
   // Sample images data
@@ -71,6 +71,24 @@ const Projects = () => {
     }
   ];
 
+  // Social media accounts data
+  const socialMediaAccounts = [
+    {
+      id: 1,
+      platform: 'Instagram',
+      handle: 'mira_bhayandar_projects',
+      url: 'https://www.instagram.com/mira_bhayandar_projects/?hl=en',
+      icon: <Instagram className="h-5 w-5" />
+    },
+    {
+      id: 2,
+      platform: 'Instagram',
+      handle: 'premium_project_bhayandar_',
+      url: '#',
+      icon: <Instagram className="h-5 w-5" />
+    }
+  ];
+
   const [isGridView, setIsGridView] = useState(true);
   const [activeTab, setActiveTab] = useState("videos");
   const { toast } = useToast();
@@ -95,12 +113,15 @@ const Projects = () => {
         </div>
         
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="w-full mb-8 grid grid-cols-2 h-auto">
+          <TabsList className="w-full mb-8 grid grid-cols-3 h-auto">
             <TabsTrigger value="videos" className="py-3">
               <Film className="mr-2 h-4 w-4" /> Video Campaigns
             </TabsTrigger>
             <TabsTrigger value="images" className="py-3">
               <Image className="mr-2 h-4 w-4" /> Image Gallery
+            </TabsTrigger>
+            <TabsTrigger value="social" className="py-3">
+              <Instagram className="mr-2 h-4 w-4" /> Social Media
             </TabsTrigger>
           </TabsList>
           
@@ -126,6 +147,37 @@ const Projects = () => {
                   title={image.title}
                   imageUrl={image.imageUrl}
                 />
+              ))}
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="social" className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {socialMediaAccounts.map(account => (
+                <Card key={account.id} className="overflow-hidden hover:shadow-lg transition-all">
+                  <CardContent className="p-5">
+                    <div className="flex items-center space-x-4">
+                      <div className="bg-portfolio-accent text-white rounded-full p-3">
+                        {account.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-lg mb-1">{account.platform}</h3>
+                        <p className="text-gray-600 mb-3">@{account.handle}</p>
+                        <a 
+                          href={account.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-portfolio-navy hover:text-portfolio-accent transition-colors font-medium"
+                        >
+                          View Profile
+                          <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </TabsContent>
