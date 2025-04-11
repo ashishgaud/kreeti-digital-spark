@@ -4,7 +4,6 @@ import Header from '../components/Header';
 import ProfileSummary from '../components/ProfileSummary';
 import Experience from '../components/Experience';
 import Projects from '../components/Projects';
-import Metrics from '../components/Metrics';
 import Skills from '../components/Skills';
 import Education from '../components/Education';
 
@@ -49,10 +48,6 @@ const Index = () => {
         
         <div className="animate-on-scroll">
           <Projects />
-        </div>
-        
-        <div className="animate-on-scroll">
-          <Metrics />
         </div>
         
         <div className="animate-on-scroll">
