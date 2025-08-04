@@ -115,13 +115,13 @@ const Projects = () => {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="w-full mb-8 grid grid-cols-3 h-auto">
             <TabsTrigger value="videos" className="py-3">
-              <Film className="mr-2 h-4 w-4" /> Video Campaigns
+              <Film className="mr-2 h-4 w-4" /> Videos
             </TabsTrigger>
             <TabsTrigger value="images" className="py-3">
-              <Image className="mr-2 h-4 w-4" /> Image Gallery
+              <Image className="mr-2 h-4 w-4" /> Canva Video
             </TabsTrigger>
             <TabsTrigger value="social" className="py-3">
-              <Instagram className="mr-2 h-4 w-4" /> Social Media
+              <Instagram className="mr-2 h-4 w-4" /> Social Content Video
             </TabsTrigger>
           </TabsList>
           
