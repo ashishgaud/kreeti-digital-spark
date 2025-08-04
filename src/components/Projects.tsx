@@ -112,20 +112,12 @@ const Projects = () => {
           </Button>
         </div>
         
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="w-full mb-8 grid grid-cols-3 h-auto">
-            <TabsTrigger value="videos" className="py-3">
-              <Film className="mr-2 h-4 w-4" /> Videos
-            </TabsTrigger>
-            <TabsTrigger value="images" className="py-3">
-              <Image className="mr-2 h-4 w-4" /> Canva Video
-            </TabsTrigger>
-            <TabsTrigger value="social" className="py-3">
-              <Instagram className="mr-2 h-4 w-4" /> Social Content Video
-            </TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="videos" className="space-y-4">
+        <div className="space-y-8">
+          {/* Videos Section */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 flex items-center">
+              <Film className="mr-2 h-5 w-5" /> Videos
+            </h3>
             <div className={`grid ${isGridView ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'} gap-6`}>
               {videos.map(video => (
                 <VideoCard 
@@ -137,9 +129,13 @@ const Projects = () => {
                 />
               ))}
             </div>
-          </TabsContent>
-          
-          <TabsContent value="images" className="space-y-4">
+          </div>
+
+          {/* Canva Videos Section */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 flex items-center">
+              <Image className="mr-2 h-5 w-5" /> Canva Videos
+            </h3>
             <div className={`grid ${isGridView ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'} gap-6`}>
               {images.map(image => (
                 <ImageCard
@@ -149,9 +145,13 @@ const Projects = () => {
                 />
               ))}
             </div>
-          </TabsContent>
-          
-          <TabsContent value="social" className="space-y-4">
+          </div>
+
+          {/* Social Content Videos Section */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 flex items-center">
+              <Instagram className="mr-2 h-5 w-5" /> Social Content Videos
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {socialMediaAccounts.map(account => (
                 <Card key={account.id} className="overflow-hidden hover:shadow-lg transition-all">
@@ -180,8 +180,8 @@ const Projects = () => {
                 </Card>
               ))}
             </div>
-          </TabsContent>
-        </Tabs>
+          </div>
+        </div>
 
         <div className="mt-12 text-center">
           <Button variant="outline" size="lg" className="group hover:bg-portfolio-navy hover:text-white">
