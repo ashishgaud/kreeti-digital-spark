@@ -9,65 +9,89 @@ import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Projects = () => {
-  // These would be replaced with actual URLs from Supabase storage
+  // Coohom Videos
   const videos = [
     {
       id: 1,
-      title: '1BHK Launch Campaign',
-       thumbnailUrl: 'https://via.placeholder.com/640x360/0A2647/FFFFFF?text=Digital+Marketing+Portfolio+%7C+Click+to+Play',
-      videoUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Video%202025-04-11%20at%201.35.09%20AM.mp4'
+      title: 'Coohom Video 1',
+      thumbnailUrl: 'https://via.placeholder.com/640x360/0A2647/FFFFFF?text=Coohom+Video+1',
+      videoUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//cf40cec4-ab73-4a39-bd5d-443ca553e5f9.mov'
     },
     {
       id: 2,
-      title: '1BHK & 2BHK Launch Campaign',
-      thumbnailUrl: 'https://via.placeholder.com/640x360/144272/FFFFFF?text=Virtual+Site+Walkthrough',
-      videoUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Video%202025-04-11%20at%201.35.30%20AM.mp4'
+      title: 'Coohom Video 2',
+      thumbnailUrl: 'https://via.placeholder.com/640x360/144272/FFFFFF?text=Coohom+Video+2',
+      videoUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//bf581bf8-edbd-415b-8fa2-af52ea0a10bb.mov'
     },
     {
       id: 3,
-      title: '1BHK & 2BHK & Jodi Option Launch Campaign',
-      thumbnailUrl: 'https://via.placeholder.com/640x360/2C74B3/FFFFFF?text=Diwali+Promo+Ad',
-      videoUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Video%202025-04-11%20at%201.35.31%20AM%20(1).mp4'
+      title: 'Coohom Video 3',
+      thumbnailUrl: 'https://via.placeholder.com/640x360/2C74B3/FFFFFF?text=Coohom+Video+3',
+      videoUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//b7a731aa-c350-49e8-9aba-a14527090cd9.mov'
     },
     {
       id: 4,
-      title: 'SKYLINE',
-      thumbnailUrl: 'https://via.placeholder.com/640x360/0A2647/FFFFFF?text=Client+Testimonials',
-      videoUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Video%202025-04-11%20at%201.35.32%20AM.mp4'
+      title: 'Coohom Video 4',
+      thumbnailUrl: 'https://via.placeholder.com/640x360/0A2647/FFFFFF?text=Coohom+Video+4',
+      videoUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//7a3e4c4b-d79a-46b9-ab55-d4ab7588e25c.mov'
     }
   ];
   
-  // Sample images data
+  // Canva Images
   const images = [
     {
       id: 1,
-      title: 'Property Exterior Shot',
-      imageUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Image%202025-04-11%20at%201.35.31%20AM.jpeg'
+      title: 'Canva Design 1',
+      imageUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//64e0f688-a550-4f16-826a-8aadd7ed91d2.jpeg'
     },
     {
       id: 2,
-      title: 'Modern Interior Design',
-      imageUrl: 'https://pqolkeztotszaehikkdq.supabase.co/storage/v1/object/public/kreeti//WhatsApp%20Image%202025-04-11%20at%201.35.32%20AM.jpeg'
+      title: 'Canva Design 2',
+      imageUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//6d59b430-0c69-43af-ac39-6c46bce4cd00.jpeg'
     },
     {
       id: 3,
-      title: 'Promotional Poster',
-      imageUrl: 'https://via.placeholder.com/800x600/2C74B3/FFFFFF?text=Promo+Poster'
+      title: 'Canva Design 3',
+      imageUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//d11015e9-ba80-4b9a-aed8-0826e8e6e5d4.jpeg'
     },
     {
       id: 4,
-      title: 'Social Media Campaign',
-      imageUrl: 'https://via.placeholder.com/800x600/0A2647/FFFFFF?text=Social+Media'
+      title: 'Canva Design 4',
+      imageUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//d90de493-3003-4d71-8d68-4f2dc6f9ecd5.jpeg'
+    }
+  ];
+
+  // Social Content Videos
+  const socialContentVideos = [
+    {
+      id: 1,
+      title: 'Social Video 1',
+      thumbnailUrl: 'https://via.placeholder.com/640x360/0A2647/FFFFFF?text=Social+Video+1',
+      videoUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//75d1d80a-b3e8-4b87-b02f-13a5a821a533.mov'
+    },
+    {
+      id: 2,
+      title: 'Social Video 2',
+      thumbnailUrl: 'https://via.placeholder.com/640x360/144272/FFFFFF?text=Social+Video+2',
+      videoUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//7467622a-3c60-426d-9622-51cb2da54d53.mov'
+    },
+    {
+      id: 3,
+      title: 'Social Video 3',
+      thumbnailUrl: 'https://via.placeholder.com/640x360/2C74B3/FFFFFF?text=Social+Video+3',
+      videoUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//223fa68d-bc1a-4422-8922-7f2d72939bcc.mov'
+    },
+    {
+      id: 4,
+      title: 'Social Video 4',
+      thumbnailUrl: 'https://via.placeholder.com/640x360/0A2647/FFFFFF?text=Social+Video+4',
+      videoUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//1471c42c-56aa-4681-b8b6-d0889cce3e07.mov'
     },
     {
       id: 5,
-      title: 'Brand Style Guide',
-      imageUrl: 'https://via.placeholder.com/800x600/144272/FFFFFF?text=Brand+Guide'
-    },
-    {
-      id: 6,
-      title: 'Event Photography',
-      imageUrl: 'https://via.placeholder.com/800x600/2C74B3/FFFFFF?text=Event+Photos'
+      title: 'Social Video 5',
+      thumbnailUrl: 'https://via.placeholder.com/640x360/144272/FFFFFF?text=Social+Video+5',
+      videoUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//da1614a8-02dc-4a40-be3e-1c3c20a52a6c.mov'
     }
   ];
 
@@ -152,32 +176,15 @@ const Projects = () => {
           </TabsContent>
           
           <TabsContent value="social" className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {socialMediaAccounts.map(account => (
-                <Card key={account.id} className="overflow-hidden hover:shadow-lg transition-all">
-                  <CardContent className="p-5">
-                    <div className="flex items-center space-x-4">
-                      <div className="bg-portfolio-accent text-white rounded-full p-3">
-                        {account.icon}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-lg mb-1">{account.platform}</h3>
-                        <p className="text-gray-600 mb-3">@{account.handle}</p>
-                        <a 
-                          href={account.url} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center text-portfolio-navy hover:text-portfolio-accent transition-colors font-medium"
-                        >
-                          View Profile
-                          <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+            <div className={`grid ${isGridView ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'} gap-6`}>
+              {socialContentVideos.map(video => (
+                <VideoCard 
+                  key={video.id}
+                  title={video.title}
+                  thumbnailUrl={video.thumbnailUrl}
+                  videoUrl={video.videoUrl}
+                  isCompact={!isGridView}
+                />
               ))}
             </div>
           </TabsContent>
