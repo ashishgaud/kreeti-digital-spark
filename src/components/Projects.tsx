@@ -200,6 +200,34 @@ const Projects = () => {
                 />
               ))}
             </div>
+            
+            {/* Social Media Accounts */}
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold text-portfolio-navy mb-4">Follow Us on Social Media</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {socialMediaAccounts.map(account => (
+                  <Card key={account.id} className="hover:shadow-lg transition-shadow duration-300">
+                    <CardContent className="p-4 flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        {account.icon}
+                        <div>
+                          <p className="font-medium text-portfolio-navy">{account.platform}</p>
+                          <p className="text-sm text-gray-600">@{account.handle}</p>
+                        </div>
+                      </div>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        onClick={() => window.open(account.url, '_blank')}
+                        className="hover:bg-portfolio-navy hover:text-white"
+                      >
+                        Visit
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
           </TabsContent>
         </Tabs>
 
