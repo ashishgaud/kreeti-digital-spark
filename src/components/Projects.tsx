@@ -37,45 +37,27 @@ const Projects = () => {
     },
   ];
   
-  // Canva Content
-  const canvaContent = [
+  // Canva Images
+  const images = [
     {
       id: 1,
       title: 'Canva Design 1',
-      type: 'image',
       imageUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//64e0f688-a550-4f16-826a-8aadd7ed91d2.jpeg'
     },
     {
       id: 2,
       title: 'Canva Design 2',
-      type: 'image',
       imageUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//6d59b430-0c69-43af-ac39-6c46bce4cd00.jpeg'
     },
     {
       id: 3,
       title: 'Canva Design 3',
-      type: 'image',
       imageUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//d11015e9-ba80-4b9a-aed8-0826e8e6e5d4.jpeg'
     },
     {
       id: 4,
       title: 'Canva Design 4',
-      type: 'image',
       imageUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//d90de493-3003-4d71-8d68-4f2dc6f9ecd5.jpeg'
-    },
-    {
-      id: 5,
-      title: 'Canva Video 1',
-      type: 'video',
-      thumbnailUrl: 'https://via.placeholder.com/640x360/0A2647/FFFFFF?text=Canva+Video+1',
-      videoUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//75d1d80a-b3e8-4b87-b02f-13a5a821a533.mov'
-    },
-    {
-      id: 6,
-      title: 'Canva Video 2',
-      type: 'video',
-      thumbnailUrl: 'https://via.placeholder.com/640x360/144272/FFFFFF?text=Canva+Video+2',
-      videoUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//7467622a-3c60-426d-9622-51cb2da54d53.mov'
     },
   ];
 
@@ -183,22 +165,12 @@ const Projects = () => {
           
           <TabsContent value="canva" className="space-y-4">
             <div className={`grid ${isGridView ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'} gap-6`}>
-              {canvaContent.map(item => (
-                item.type === 'image' ? (
-                  <ImageCard
-                    key={item.id}
-                    title={item.title}
-                    imageUrl={item.imageUrl}
-                  />
-                ) : (
-                  <VideoCard 
-                    key={item.id}
-                    title={item.title}
-                    thumbnailUrl={item.thumbnailUrl}
-                    videoUrl={item.videoUrl}
-                    isCompact={!isGridView}
-                  />
-                )
+              {images.map(image => (
+                <ImageCard
+                  key={image.id}
+                  title={image.title}
+                  imageUrl={image.imageUrl}
+                />
               ))}
             </div>
           </TabsContent>
