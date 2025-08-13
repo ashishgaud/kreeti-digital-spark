@@ -29,20 +29,21 @@ const ImageCard = ({ title, imageUrl }: ImageCardProps) => {
 
       {isExpanded && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
           onClick={toggleExpand}
         >
-          <div className="relative max-w-4xl max-h-[90vh]">
+          <div className="relative w-full h-full flex items-center justify-center">
             <img 
               src={imageUrl} 
               alt={title} 
-              className="max-w-full max-h-full object-contain rounded-lg"
+              className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
             />
             <button 
               onClick={toggleExpand}
-              className="absolute -top-10 right-0 bg-white rounded-full p-1"
+              className="absolute top-4 right-4 bg-white rounded-full p-2 hover:bg-gray-100 transition-colors"
             >
-              <X size={24} className="text-portfolio-navy" />
+              <X size={20} className="text-gray-800" />
             </button>
           </div>
         </div>
