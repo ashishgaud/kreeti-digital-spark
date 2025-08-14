@@ -38,10 +38,19 @@ const Experience = () => {
       company: "Delta Yards",
       duration: "Oct 2023 – Present",
       responsibilities: [
-        "Led 30+ ad campaigns for real estate lead generation",
-        "Designed ad creatives using Canva",
-        "Managed Google Ads (Search & Display)",
-        "Optimized campaigns via A/B testing and performance analytics"
+        "Generated qualified leads through paid campaigns on Facebook Ads and Google Ads, ensuring effective targeting and optimization.",
+
+"Tracked campaign performance using Google Tag Manager (GTM) and UTM parameters for accurate analytics.",
+
+"Managed end-to-end campaigns, from ad creation to performance tracking in Google Analytics.",
+
+"Handled social media accounts, developed engaging content, and maintained consistent brand presence.",
+
+"Designed ad creatives and social media visuals using Canva.",
+
+"Applied basic SEO practices, including on-page and off-page optimization, to improve website visibility.",
+
+"Consistently achieved a 3x ROI on monthly campaigns through strategic planning and optimization."
       ]
     },
     {
@@ -49,9 +58,10 @@ const Experience = () => {
       company: "R5 Design Hub",
       duration: "Jun 2023 – Oct 2023",
       responsibilities: [
-        "Ran social media campaigns and LinkedIn ads",
-        "Focused on brand awareness and engagement",
-        "Assisted with content creation and social media scheduling"
+        "Managed and grew social media accounts for multiple clients across different industries.",
+        "Planned and executed brand awareness campaigns on Facebook and LinkedIn to increase visibility and engagement.",
+        "Developed monthly social media strategies and content plans aligned with client objectives."
+        
       ]
     }
   ];
