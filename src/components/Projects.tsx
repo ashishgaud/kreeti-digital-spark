@@ -123,7 +123,7 @@ const Projects = () => {
   
 
   const [isGridView, setIsGridView] = useState(true);
-  const [activeTab, setActiveTab] = useState("Social Content");
+  const [activeTab, setActiveTab] = useState("social");
   const { toast } = useToast();
 
   const handleViewToggle = () => {
