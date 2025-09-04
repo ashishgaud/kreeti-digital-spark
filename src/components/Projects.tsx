@@ -87,6 +87,28 @@ const Projects = () => {
       thumbnailUrl: 'https://via.placeholder.com/640x360/144272/FFFFFF?text=Social+Video+2',
       videoUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media//7467622a-3c60-426d-9622-51cb2da54d53.mov'
     },
+   {
+    id: 7,
+      //title: 'Canva Design 3',
+      imageUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media/fb6f71bd-50ae-4b9f-b2cd-6a08c7031488.jpeg'
+    },
+   {
+    id: 8,
+      //title: 'Canva Design 3',
+      imageUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media/b984bace-bd45-409d-9796-458a7ca761f7.jpeg'
+    },
+   {
+    id: 9,
+      //title: 'Canva Design 3',
+      imageUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media/9e9868ff-321a-4d38-b79b-cf0fa9cfa29c.jpeg'
+    },
+     {
+    id: 10,
+      //title: 'Canva Design 3',
+      imageUrl: 'https://dfcevziyiolgitizwhmn.supabase.co/storage/v1/object/public/media/56b5500c-3e9c-4f65-a033-3990bf0d90f2.jpeg'
+    }
+   
+   
   ];
 
  
